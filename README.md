@@ -8,6 +8,7 @@ I will keep adding other resources I found useful.
 * [Spring Framework documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/)
 ### Topics
  * Bean wiring - Configuring dependency injection, explicit Java and XML configuration
+ * Bean lifecycle - Using various methods of customising bean behavior during creation/disposal
 
 
 ### Roadmap
