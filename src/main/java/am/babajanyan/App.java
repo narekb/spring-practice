@@ -11,9 +11,13 @@ public class App {
     public static void main(String[] args) {
         AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(App.class);
         // 1) Create simple bean
-        // 2) Configure multiple lifecycle hooks (@PostConstruct, initMethodName, afterPropertiesSet())
-        // 3) Monitor sequence of method output
-        ctx.getBean("demoBean", LifecycleDemo.class);
+        // 2) Create logger BeanPostProcessor that will log which beans get injected
+        // 3) Create a custom annotation and implement BeanPostProcessor to
+        // mimic @Autowired behavior
+
+        SimpleBean bean = ctx.getBean(SimpleBean.class);
+        System.out.println("String value = " + bean.getStringValue());
+        System.out.println("13 = success. Integer value = " + bean.getIntValue());
         ctx.close();
     }
 }
